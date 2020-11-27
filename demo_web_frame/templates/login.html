@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+    <a href="/">index</a> <a href="/register">register</a>
+    <br>
+    <h1>login</h1>
+    <h2>Hello {{username}}</h2>
+    <form action="/login" method="post">
+        <input type="text" name="username" placeholder="input username">
+        <br>
+        <input type="text" name="password" placeholder="input password">
+        <br>
+        <button type="submit">login</button>
+    </form>
+</body>
+</html>
