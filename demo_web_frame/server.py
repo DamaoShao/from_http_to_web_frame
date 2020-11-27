@@ -1,7 +1,7 @@
 import socket
 import urllib.parse
 
-from routes import route_static, route_dict
+from routes import route_dict, session
 
 
 class Request(object):
@@ -66,25 +66,23 @@ def response_for_path(path):
     path, query = parsed_path(path)
     request.path = path
     request.query = query
-    r = {
-        '/static': route_static,
-    }
-    r.update(route_dict)
-    response = r.get(path)
+    response = route_dict.get(path)
     if response:
         return response(request)
     else:
         return ERROR['404']
 
 
-def run(host='', port=2000):
+def run(host='127.0.0.1', port=8080):
     print("http://{}:{}".format(host, port))
     with socket.socket() as s:
         s.bind((host, port))
         while True:
             print("*"*50)
+            print("Session: {}".format(session))
             s.listen(3)
             connection, address = s.accept()
+            print("***Address:\n{}".format(address))
             r = connection.recv(1000)
             r = r.decode('utf-8')
             # filter empty
@@ -106,4 +104,4 @@ def run(host='', port=2000):
 
 
 if __name__ == '__main__':
-    run(host='127.0.0.1', port=8080)
+    run(host='127.0.0.1', port=8081)

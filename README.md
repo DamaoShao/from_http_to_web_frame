@@ -29,7 +29,7 @@ demo--[requests](./demo_requests)
 
 ## web frame的作用
 demo--[demo_web_frame](./demo_web_frame)
-+ 解析http
++ 解析http-> request, response
 + 会话
 + 路由
 + 模版

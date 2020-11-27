@@ -8,55 +8,5 @@
     "id": 1,
     "username": "ermao",
     "password": "123"
-  },
-  {
-    "id": 2,
-    "username": "hello",
-    "password": "world"
-  },
-  {
-    "id": 3,
-    "username": "hello2",
-    "password": "world2"
-  },
-  {
-    "id": 4,
-    "username": "hello2",
-    "password": "world2"
-  },
-  {
-    "id": 5,
-    "username": "wumao",
-    "password": "123"
-  },
-  {
-    "id": 6,
-    "username": "liubao",
-    "password": "123456"
-  },
-  {
-    "id": 7,
-    "username": "222",
-    "password": "222"
-  },
-  {
-    "id": 8,
-    "username": "ddd",
-    "password": "ddd"
-  },
-  {
-    "id": 9,
-    "username": "hhh",
-    "password": ""
-  },
-  {
-    "id": 10,
-    "username": "ggg",
-    "password": ""
-  },
-  {
-    "id": 11,
-    "username": "dfsdf",
-    "password": "dsf"
   }
 ]

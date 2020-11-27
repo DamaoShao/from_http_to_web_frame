@@ -45,7 +45,7 @@ def login_required(route_function):
 
 
 def route_static(request):
-    filename = request.query.get('file', 'image.jpeg')
+    filename = request.query.get('file', 'dog.png')
     path = 'static/' + filename
     with open(path, 'rb') as f:
         header = b'HTTP/1.1 200 OK\r\nContent-Type: image/gif\r\n\r\n'
@@ -109,4 +109,5 @@ route_dict = {
     '/': route_index,
     '/login': route_login,
     '/register': route_register,
+    '/static': route_static,
 }

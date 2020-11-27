@@ -43,7 +43,6 @@ class HttpRequest(object):
 
     def requests(self, method, url):
         host, port, path = self.parse_url(url)
-        print(host, port, path)
         s = socket.socket()
         s.connect((host, port))
         request_data = '{method} {path} HTTP/1.1\r\nhost: {host}\r\nConnection: close\r\n\r\n'.format(
@@ -51,6 +50,7 @@ class HttpRequest(object):
         print("***Requests:\n{}\n***".format(request_data))
         s.send(request_data.encode('utf-8'))
         resp = self.get_resp(s)
+        print("***Response:\n{}\n***".format(resp))
         http_status_code, headers, body = self.parse_resp(resp)
         print("***Response code:\n{}\n***".format(http_status_code))
         print("***Response headers:\n{}\n***".format(headers))
@@ -68,5 +68,5 @@ class HttpRequest(object):
 
 if __name__ == '__main__':
     requests = HttpRequest()
-    requests.get('http://www.example.com')
-    # demo_requests.get('http://127.0.0.1:8080/login')
+    # requests.get('http://www.example.com')
+    requests.get('http://127.0.0.1:8080/login')
